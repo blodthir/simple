@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>@yield('title', 'Sample') - 攻防技术组案例</title>
+    <title>@yield('title', 'Sample App') - 攻防技术案例</title>
+    <link rel="stylesheet" href="/css/app.css">
   </head>
-  <body>
-    @yield('content')
-  </body>
+ <body>
+   @include('layouts._header')
+
+   <div class="container">
+     <div class="col-md-offset-1 col-md-10">
+       @yield('content')
+       @include('layouts._footer')
+     </div>
+   </div>
+ </body>
 </html>
