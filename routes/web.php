@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','StaticPageController@home');
+Route::get('/findresult','StaticPageController@findresult');
+Route::get('/pathshow','StaticPageController@pathshow');
+Route::get('/wikishow','StaticPageController@wikishow');
+Route::get('signup','UsersController@create')->name('signup');
+Route::resource('users','UsersController');
