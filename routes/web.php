@@ -10,14 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/items-lists', ['as'=>'items-lists','uses'=>'ItemSearchController@index']);
+Route::post('/create-item', ['as'=>'create-item','uses'=>'ItemSearchController@create']);
 Route::get('/','StaticPageController@home');
 Route::get('/findresult','StaticPageController@findresult');
 Route::get('/pathshow','StaticPageController@pathshow');
 Route::get('/wikishow','StaticPageController@wikishow');
 Route::get('signup','UsersController@create')->name('signup');
 Route::resource('users','UsersController');
-
+Route::resource('items','ItemSearchController');
 Route::get('login', 'SessionsController@create')->name('login');
 Route::post('login', 'SessionsController@store')->name('login');
 Route::delete('logout', 'SessionsController@destroy')->name('logout');

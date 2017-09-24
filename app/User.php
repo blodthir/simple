@@ -8,13 +8,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
-    protected $table = 'users';
+    public $table = 'users';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
+    public $fillable = [
         'name', 'email', 'password',
     ];
 
@@ -23,7 +23,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $hidden = [
+    public $hidden = [
         'password', 'remember_token',
     ];
 
@@ -31,7 +31,7 @@ class User extends Authenticatable
     {
       $hash = md5(strtolower(trim($this->attributes['email'])));
       return "http://www.gravatar.com/avatar/$hash?s=$size";
-      
+
 
     }
 }

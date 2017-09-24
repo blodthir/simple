@@ -7,7 +7,7 @@ use App\Http\Requests;
 use App\User;
 use Auth;
 class UsersController extends Controller
-{
+{/*
     public function __construct()
     {
         $this->middleware('auth', [
@@ -17,7 +17,7 @@ class UsersController extends Controller
         $this->middleware('guest', [
             'only' => ['create']
         ]);
-    }
+    }*/
     public function index()
     {
       $users = User::paginate(10);

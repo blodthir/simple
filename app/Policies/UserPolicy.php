@@ -22,4 +22,12 @@ class UserPolicy
     {
         return $currentUser->is_admin && $currentUser->id !== $user->id;
     }
+      public function signup(User $currentUser, User $user)
+      {
+        return $currentUser->is_admin && $currentUser->id !== $user->id;
+      }
+      public function destroyitem(User $currentUser, User $user)
+     {
+         return $currentUser->is_admin;
+     }
 }

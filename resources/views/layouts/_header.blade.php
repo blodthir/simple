@@ -6,6 +6,7 @@
         <ul class="nav navbar-nav navbar-right">
           @if (Auth::check())
             <li><a href="{{ route('users.index') }}">用户列表</a></li>
+            <li><a href="/items-lists">搜索&上传</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 {{ Auth::user()->name }} <b class="caret"></b>
@@ -26,9 +27,6 @@
               </ul>
             </li>
           @else
-              <li><a href="/findresult">搜索</a></li>
-              <li><a href="/wikishow">wiki展示</a></li>
-              <li><a href="/pathshow">路径展示</a></li>
               <li><a href="/login">登录</a></li>
             @endif
           </ul>
